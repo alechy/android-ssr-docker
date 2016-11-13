@@ -3,7 +3,7 @@ MAINTAINER alechy
 RUN apt-get update -y 
 RUN apt-get dist-upgrade -y
 RUN apt-get install git golang openjdk-8-jdk -y
-RUN apt-get install openssh-server -y
+RUN apt-get install openssh-server apt-transport-https -y
 RUN mkdir /var/run/sshd
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 RUN echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list
