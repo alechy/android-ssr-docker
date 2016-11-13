@@ -13,6 +13,6 @@ RUN apt-get install sbt
 RUN cd /opt && git clone https://git.oschina.net/alechy/net.alechy.ml.ssr
 RUN export GOROOT_BOOTSTRAP=/usr/lib/go-1.6
 RUN cd /opt/net.alechy.ml.ssr && git submodule update --init
-RUN sbt native-build clean android:package-release
+RUN sbt
 ENTRYPOINT /usr/sbin/sshd -D
 
